@@ -6,7 +6,7 @@
 /*   By: haghouli <haghouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 12:44:31 by haghouli          #+#    #+#             */
-/*   Updated: 2023/01/19 18:13:10 by haghouli         ###   ########.fr       */
+/*   Updated: 2023/01/21 08:46:39 by haghouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,13 @@ int main(int ac, char *av[], char *env[])
     t_list  *head;
 
     head = NULL;
+    fd2 = open(av[ac - 1], O_WRONLY | O_CREAT | O_TRUNC, 0777);
     if(!ft_strcmp("here_doc" ,av[1]))
     {
         char    *str;
-        char    *name = "tmp";
+        char    *name;
 
+        name = "tmp";
         fd1 = open(name, O_RDWR| O_CREAT | O_TRUNC, 0777);
         fd2 = open(av[ac - 1], O_WRONLY | O_CREAT | O_TRUNC, 0777);
         while(1)
@@ -84,20 +86,20 @@ int main(int ac, char *av[], char *env[])
             free_and_move_on(&head);
         }
         while(wait(NULL) != -1);
-        //unlink(name);
-        exit(0);
+        unlink(name);
     }
-    // fd1 = open(av[1], O_RDONLY);
-	// fd2 = open(av[ac - 1], O_WRONLY | O_CREAT | O_TRUNC, 0777);
-    // if(fd1 < 0)
-    //    put_error("Error");
-    // fill_lst(ac ,&head, av, env);
-    // dup2(fd1, 0);
-    // while(head)
-    // {
-    //     pipxx(head->path, head, fd2);
-    //     free_and_move_on(&head);
-    // }
-    // while(wait(NULL) != -1);
-    // return (0);
+    else{
+        fill_lst(ac ,&head,av, env);
+        fd1 = open(av[1], O_RDONLY);
+        if (fd1 < 0)
+            return(put_error("Error"), 0);
+        dup2(fd1, 0);
+        while(head)
+        {
+            pipxx(head->path, head, fd2);
+            free_and_move_on(&head);
+        }
+        while(wait(NULL) != -1);
+    }
+    return (0);
 }
