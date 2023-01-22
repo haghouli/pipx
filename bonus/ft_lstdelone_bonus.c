@@ -12,10 +12,10 @@
 
 #include "../pipx.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(char*))
+void	ft_lstdelone(t_list *lst, void (*del)(char *))
 {
 	if (del == NULL || lst == NULL)
 		return ;
-	del(lst -> path);
+	del(lst->path);
 	free(lst);
 }

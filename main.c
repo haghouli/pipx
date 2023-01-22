@@ -22,7 +22,7 @@ int	main(int ac, char *av[], char *env[])
 	fd1 = open(av[1], O_RDONLY);
 	fd2 = open(av[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	if (fd1 < 0)
-		return(put_error("Error"), 0);
+		return (put_error("Error"), 0);
 	pipex(fd1, fd2, av, env);
 	return (0);
 }

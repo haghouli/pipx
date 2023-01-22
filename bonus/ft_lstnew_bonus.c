@@ -19,8 +19,8 @@ t_list	*ft_lstnew_bonus(char *path, char **params)
 	head = (t_list *)malloc(sizeof(t_list));
 	if (!head)
 		return (NULL);
-	head -> path = path;
-	head -> params = params;
-	head -> next = NULL;
+	head->path = path;
+	head->params = params;
+	head->next = NULL;
 	return (head);
 }

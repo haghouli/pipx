@@ -6,7 +6,7 @@
 /*   By: haghouli <haghouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 11:46:40 by haghouli          #+#    #+#             */
-/*   Updated: 2023/01/21 08:57:36 by haghouli         ###   ########.fr       */
+/*   Updated: 2023/01/22 14:52:08 by haghouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,6 @@ char	*get_true_path(char **env, char *av)
 		i++;
 	}
 	if (real_path == NULL)
-	{
-		ft_printf("Error: command not found %s\n", av);
-		exit(1);
-	}
+		ft_printf("Error: command not found: %s\n", av);
 	return (real_path);
 }

@@ -6,7 +6,7 @@
 #    By: haghouli <haghouli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/26 05:44:24 by haghouli          #+#    #+#              #
-#    Updated: 2023/01/19 17:34:41 by haghouli         ###   ########.fr        #
+#    Updated: 2023/01/21 18:07:08 by haghouli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ B_OBJS = $(B_FILES:.c=.o)
 all : $(NAME)
 
 bonus : $(OBJS) $(B_OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(B_OBJS) ./ft_printf/libftprintf.a main_bonus.c -o $(NAME) $(SANI)
+	$(CC) $(CFLAGS) $(OBJS) $(B_OBJS) ./ft_printf/libftprintf.a main_bonus.c -o $(NAME)
 
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) ./ft_printf/libftprintf.a main.c -o $(NAME)

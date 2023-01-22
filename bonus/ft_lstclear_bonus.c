@@ -12,7 +12,7 @@
 
 #include "../pipx.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(char*))
+void	ft_lstclear(t_list **lst, void (*del)(char *))
 {
 	t_list	*tmp;
 
@@ -20,8 +20,8 @@ void	ft_lstclear(t_list **lst, void (*del)(char*))
 		return ;
 	while (*lst != NULL)
 	{
-		tmp = (*lst)-> next;
-		del((*lst)-> path);
+		tmp = (*lst)->next;
+		del((*lst)->path);
 		free(*lst);
 		*lst = tmp;
 	}

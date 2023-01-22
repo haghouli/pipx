@@ -6,7 +6,7 @@
 /*   By: haghouli <haghouli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 21:51:41 by haghouli          #+#    #+#             */
-/*   Updated: 2023/01/19 05:28:35 by haghouli         ###   ########.fr       */
+/*   Updated: 2023/01/22 08:37:13 by haghouli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	j = 0;
 	full_size = (ft_strlen(s1) + ft_strlen(s2));
 	joined_str = (char *)malloc((full_size + 1) * sizeof(char));
-	if (!joined_str)
-		return (0);
 	while (i < full_size)
 	{
 		while (s1[j])
