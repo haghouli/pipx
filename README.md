@@ -1,4 +1,4 @@
-# Pipex - 42 Project
+# Pipex - 1337 Project
 
 ## Description
 Pipex is a project that focuses on replicating the behavior of pipes and input/output redirection in a shell. The goal is to implement a program that allows the user to execute multiple commands connected by pipes (`|`) and with input/output redirection (`<`, `>`). 
